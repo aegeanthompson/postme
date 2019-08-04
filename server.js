@@ -8,6 +8,10 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 const Activities = require('./models/activities.js');
+
+const activitiesController = require('./controllers/activities.js');
+app.use('/activities', activitiesController);
+
 //___________________
 //Port
 //___________________
@@ -47,91 +51,6 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-
-//___________________
-// Routes
-//___________________
-
-
-// INDEX ROUTE
-app.get('/activities', (req, res) => {
-  Activities.find({}, (error, allActivities) => {
-    res.render('index.ejs', {
-      activities: allActivities
-    });
-  });
-});
-
-// NEW ROUTE
-app.get('/activities/new', (req, res) => {
-  res.render('new.ejs');
-});
-
-// POST ROUTE
-app.post('/activities', (req, res) => {
-  Activities.create(req.body, (error, newActivity) => {
-    res.redirect('/activities');
-  });
-});
-
-// SHOW ROUTE
-app.get('/activities/:id', (req, res) => {
-  Activities.findById(req.params.id, (err, foundActivity) => {
-      res.render('show.ejs', {
-        activity: foundActivity
-      });
-  });
-});
-
-// DELETE ROUTE
-
-app.delete('/activities/:id', (req, res)=>{
-    Activities.findByIdAndRemove(req.params.id, (err, data)=>{
-        res.redirect('/activities');
-    });
-});
-
-// EDIT ROUTE
-
-app.get('/activities/:id/edit', (req, res)=>{
-    Activities.findById(req.params.id, (err, foundActivity)=>{
-        res.render(
-    		'edit.ejs',
-    		{
-    			activity: foundActivity
-    		}
-    	);
-    });
-});
-
-// PUT ROUTE
-
-app.put('/activities/:id', (req, res)=>{
-    Activities.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
-        res.redirect('/activities/' + req.params.id);
-    });
-});
-
-// SEED ROUTE
-
-app.get('/seed', async (req, res) => {
-  const newActivities =
-    [
-      {
-        name: 'Bowling',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-        img: 'https://imgur.com/LEHS8h3.png',
-        tags: 'night-out'
-      }
-    ]
-
-  try {
-    const seedItems = await Activities.create(newActivities)
-    res.send(seedItems)
-  } catch (err) {
-    res.send(err.message)
-  }
-})
 
 
 //___________________
