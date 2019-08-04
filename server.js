@@ -9,7 +9,7 @@ const app = express ();
 const db = mongoose.connection;
 
 const Activities = require('../models/activities.js');
-=======
+
 const Activities = require('./models/activities.js');
 
 
