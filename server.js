@@ -7,6 +7,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Activities = require('./models/activities.js');
 //___________________
 //Port
 //___________________
@@ -50,11 +51,42 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 // Routes
 //___________________
-//localhost:3000
-app.get('/' , (req, res) => {
+
+
+// INDEX ROUTE
+app.get('/activities' , (req, res) => {
   res.render('index.ejs');
 });
 
+// SHOW ROUTE
+app.get('/activities/:id', (req, res) => {
+  Products.findById(req.params.id, (err, foundActivity) => {
+      res.render('show.ejs', {
+        activity: foundActivity
+      });
+  });
+});
+
+// SEED ROUTE
+
+app.get('/seed', async (req, res) => {
+  const newActivities =
+    [
+      {
+        name: 'Bowling',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+        img: 'https://imgur.com/LEHS8h3.png',
+        tags: 'night-out'
+      }
+    ]
+
+  try {
+    const seedItems = await Activities.create(newActivities)
+    res.send(seedItems)
+  } catch (err) {
+    res.send(err.message)
+  }
+})
 
 
 //___________________
