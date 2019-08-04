@@ -71,6 +71,14 @@ app.get('/activities/:id', (req, res) => {
   });
 });
 
+// DELETE ROUTE
+
+app.delete('/activities/:id', (req, res)=>{
+    Activities.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/activities');
+    });
+});
+
 // SEED ROUTE
 
 app.get('/seed', async (req, res) => {
