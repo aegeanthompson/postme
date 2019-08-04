@@ -91,6 +91,27 @@ app.delete('/activities/:id', (req, res)=>{
     });
 });
 
+// EDIT ROUTE
+
+app.get('/activities/:id/edit', (req, res)=>{
+    Activities.findById(req.params.id, (err, foundActivity)=>{
+        res.render(
+    		'edit.ejs',
+    		{
+    			activity: foundActivity
+    		}
+    	);
+    });
+});
+
+// PUT ROUTE
+
+app.put('/activities/:id', (req, res)=>{
+    Activities.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
+        res.redirect('/activities/' + req.params.id);
+    });
+});
+
 // SEED ROUTE
 
 app.get('/seed', async (req, res) => {
