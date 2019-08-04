@@ -5,6 +5,19 @@
     <title></title>
   </head>
   <body>
-    <h1>Activities in ATX</h1>
+    <div class="container">
+        <h1>Activities in ATX</h1>
+          <a class="activityLink" href="/activities/new">Add New Activity</a>
+          <div class="cards">
+              <% for(let i = 0; i < activities.length; i++){ %>
+                  <li>
+                      <%=activities[i].name; %> <br>
+                    <a href="/activities/<%=activities[i].id; %>">   <img src="<%=activities[i].img; %>"/></a><br>
+                      Description: $<%=activities[i].description; %>
+                  </li>
+
+            <% } %>
+            <br>
+        </div>
   </body>
 </html>

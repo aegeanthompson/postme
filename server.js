@@ -54,13 +54,17 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
 // INDEX ROUTE
-app.get('/activities' , (req, res) => {
-  res.render('index.ejs');
+app.get('/activities', (req, res) => {
+  Activities.find({}, (error, allActivities) => {
+    res.render('index.ejs', {
+      activities: allActivities
+    });
+  });
 });
 
 // SHOW ROUTE
 app.get('/activities/:id', (req, res) => {
-  Products.findById(req.params.id, (err, foundActivity) => {
+  Activities.findById(req.params.id, (err, foundActivity) => {
       res.render('show.ejs', {
         activity: foundActivity
       });
