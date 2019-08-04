@@ -62,6 +62,18 @@ app.get('/activities', (req, res) => {
   });
 });
 
+// NEW ROUTE
+app.get('/activities/new', (req, res) => {
+  res.render('new.ejs');
+});
+
+// POST ROUTE
+app.post('/activities', (req, res) => {
+  Activities.create(req.body, (error, newActivity) => {
+    res.redirect('/activities');
+  });
+});
+
 // SHOW ROUTE
 app.get('/activities/:id', (req, res) => {
   Activities.findById(req.params.id, (err, foundActivity) => {
