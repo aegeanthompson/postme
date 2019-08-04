@@ -7,7 +7,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
-const Activities = require('./models/activities.js');
+const Activities = require('../models/activities.js');
 
 const activitiesController = require('./controllers/activities.js');
 app.use('/activities', activitiesController);
