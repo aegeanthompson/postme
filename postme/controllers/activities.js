@@ -15,9 +15,9 @@ router.get('/seed', async (req, res) => {
   const newActivities =
     [
       {
-        name: 'Bowling',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-        img: 'https://imgur.com/LEHS8h3.png',
+        name: 'Dinner Detective',
+        description: 'America’s largest interactive comedy murder mystery dinner show is now playing in Austin, Texas! Solve a hilarious crime while you feast on a fantastic dinner. Just beware! The culprit is hiding in plain sight somewhere in the room, and you may find yourself as a Prime Suspect before you know it!',
+        img: 'https://i.ibb.co/Wch59cP/e520fd68-6a9b-4626-9d1e-42be3894b809-f641567ac90b5e161685e7389d96dab1.jpg',
         tags: 'night-out'
       }
     ]
