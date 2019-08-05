@@ -8,27 +8,6 @@ const Activities = require('../models/activities.js');
 //___________________
 
 
-// INDEX ROUTE
-router.get('/', (req, res) => {
-  Activities.find({}, (error, allActivities) => {
-    res.render('index.ejs', {
-      activities: allActivities
-    });
-  });
-});
-
-// NEW ROUTE
-router.get('/new', (req, res) => {
-  res.render('new.ejs');
-});
-
-// POST ROUTE
-router.post('/', (req, res) => {
-  Activities.create(req.body, (error, newActivity) => {
-    res.redirect('/activities');
-  });
-});
-
 // SEED ROUTE
 
 router.get('/seed', async (req, res) => {
@@ -50,14 +29,11 @@ router.get('/seed', async (req, res) => {
   }
 });
 
-// SHOW ROUTE
-router.get('/:id', (req, res) => {
-  Activities.findById(req.params.id, (err, foundActivity) => {
-      res.render('show.ejs', {
-        activity: foundActivity
-      });
-  });
+// NEW ROUTE
+router.get('/new', (req, res) => {
+  res.render('new.ejs');
 });
+
 
 // DELETE ROUTE
 
@@ -66,6 +42,7 @@ router.delete('/:id', (req, res)=>{
         res.redirect('/activities');
     });
 });
+
 
 // EDIT ROUTE
 
@@ -88,6 +65,32 @@ router.put('/:id', (req, res)=>{
     });
 });
 
+// INDEX ROUTE
+router.get('/', (req, res) => {
+  Activities.find({}, (error, allActivities) => {
+    res.render('index.ejs', {
+      activities: allActivities
+    });
+  });
+});
+
+// SHOW ROUTE
+router.get('/:id', (req, res) => {
+  Activities.findById(req.params.id, (err, foundActivity) => {
+      res.render('show.ejs', {
+        activity: foundActivity
+      });
+  });
+});
+
+
+
+// POST ROUTE
+router.post('/', (req, res) => {
+  Activities.create(req.body, (error, newActivity) => {
+    res.redirect('/activities');
+  });
+});
 
 
 module.exports = router;
