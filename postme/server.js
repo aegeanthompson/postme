@@ -7,10 +7,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express();
 const db = mongoose.connection;
-<<<<<<< HEAD:server.js
 
-=======
->>>>>>> 3651aec972a99fbe1aaada14c04e2a996330661a:postme/server.js
 
 const activitiesController = require('./controllers/activities.js');
 app.use('/activities', activitiesController);
