@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Activities = require('../models/activities.js');
-
+// const methodOverride  = require('method-override');
+// router.use(methodOverride('_method'));
 
 //___________________
 // Routes

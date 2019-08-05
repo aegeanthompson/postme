@@ -9,8 +9,7 @@ const app = express();
 const db = mongoose.connection;
 
 
-const activitiesController = require('./controllers/activities.js');
-app.use('/activities', activitiesController);
+
 
 //___________________
 //Port
@@ -51,7 +50,8 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-
+const activitiesController = require('./controllers/activities.js');
+app.use('/activities', activitiesController);
 
 //___________________
 //Listener
