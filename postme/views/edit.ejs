@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <div class="container">
+        <h1>Edit Activity</h1>
+        <form action="/activities/<%=activity.id%>?_method=PUT" method="POST">
+
+              Name: <input type="text" name="name" value="<%=activity.name%>"/><br/>
+              Description: <input type="text" name="description" value="<%=activity.description%>"/><br/>
+              Image: <input type="text" name="image" value="<%=activity.img%>"/><br/>
+              Tags:
+              <input type="text" name="tags" value="<%=activity.tags%>"/>
+              <br/>
+              <input type="submit" value="Submit Changes"/>
+            </form>
+          </div>
+    </body>
+</html>
