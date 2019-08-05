@@ -6,6 +6,9 @@ const activitiesSchema = new mongoose.Schema(
     description: {type: String, required: true},
     img: String,
     tags: {type: String, required: true},
+    date/time: String,
+    location: String,
+    info: String
   }
 );
 
