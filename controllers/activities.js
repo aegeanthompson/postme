@@ -29,6 +29,27 @@ router.post('/', (req, res) => {
   });
 });
 
+// SEED ROUTE
+
+router.get('/seed', async (req, res) => {
+  const newActivities =
+    [
+      {
+        name: 'Bowling',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+        img: 'https://imgur.com/LEHS8h3.png',
+        tags: 'night-out'
+      }
+    ]
+
+  try {
+    const seedItems = await Activities.create(newActivities)
+    res.send(seedItems)
+  } catch (err) {
+    res.send(err.message)
+  }
+});
+
 // SHOW ROUTE
 router.get('/:id', (req, res) => {
   Activities.findById(req.params.id, (err, foundActivity) => {
@@ -67,25 +88,6 @@ router.put('/:id', (req, res)=>{
     });
 });
 
-// SEED ROUTE
 
-router.get('/seed', async (req, res) => {
-  const newActivities =
-    [
-      {
-        name: 'Bowling',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-        img: 'https://imgur.com/LEHS8h3.png',
-        tags: 'night-out'
-      }
-    ]
-
-  try {
-    const seedItems = await Activities.create(newActivities)
-    res.send(seedItems)
-  } catch (err) {
-    res.send(err.message)
-  }
-})
 
 module.exports = router;
