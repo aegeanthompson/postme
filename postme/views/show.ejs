@@ -14,12 +14,14 @@
     <div class="container-show">
 
           <h1 class="rainbow-text showh1"><%=activity.name; %></h1>
-          <img class="showImg"src="<%=activity.img; %>"> <br>
-
+          <img class="showImg"src="<%=activity.img; %>">
           <h4><%=activity.description; %></h4>
-          <h4> <%=activity.location; %></h4><br>
+          <form action="<%=activity.info; %>">
+            <input class="newBtn" type="submit" value="MORE INFO" />
+          </form>
+          <h4> <%=activity.location; %></h4>
           <h4><%=activity.hours; %></h4>
-          <a href="<%=activity.info; %>">More Info</a><br>
+          <!-- <a href="<%=activity.info; %>">More Info</a><br> -->
           <a href="/activities">Go Back</a>
       </div>
   </body>

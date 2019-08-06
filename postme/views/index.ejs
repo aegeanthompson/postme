@@ -13,7 +13,9 @@
     <div class="banner">
         <img class="austin-img" src="https://www.tfeconnect.com/wp-content/uploads/2016/07/texas.png" alt="Austin TX">
           <h1 class="rainbow-text">adventure.ATX</h1>
-          <a class="newLink" href="/activities/new">Add New Activity</a><br>
+          <form action="/activities/new">
+            <input class="newBtn" type="submit" value="ADD NEW ACTIVITY" />
+          </form>
           </div>
           <div class="container">
               <% for(let i = 0; i < activities.length; i++){ %>
@@ -35,8 +37,13 @@
                   <form action="/activities/<%=activities[i].id;%>?_method=DELETE" method="POST">
                   <input class="delete-input"type="submit" value="DELETE" />
               </form> <br>
-              <a href="/activities/<%=activities[i].id; %>/edit">Edit</a> <br>
+              <!-- <a href="/activities/<%=activities[i].id; %>/edit">Edit</a> -->
+              <form action="/activities/<%=activities[i].id; %>/edit">
+                <input class="editBtn" type="submit" value="EDIT" />
+              </form>
               <br>
+              <br>
+
 
               </div>
             <% } %>
