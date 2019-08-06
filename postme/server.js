@@ -9,8 +9,6 @@ const app = express();
 const db = mongoose.connection;
 
 
-
-
 //___________________
 //Port
 //___________________
