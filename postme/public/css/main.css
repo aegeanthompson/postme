@@ -1,10 +1,6 @@
-html {
-  background-color: whitsmoke;
-}
 
 body {
   background-color: whitesmoke;
-  color: grey;
   text-align: center:
 }
 
@@ -14,6 +10,9 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   flex-wrap: wrap;
+  /* background-color: #E0DCDF; */
+  width: 100%;
+  padding: 0.5em;
 }
 
 .container-new {
@@ -21,6 +20,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .container-new > form  {
@@ -28,18 +28,18 @@ body {
   font-family: sans-serif;
   font-variant-caps: all-small-caps;
   font-size: 1em;
-  padding: 1em;
+  /* padding: 1em; */
 }
 
 .container-new > form > input {
   width: 500px;
-  text-align: left;
+  text-align: center;
   font-size: 1em;
 }
 
 .new-submit {
   background-color: #f51b1f;
-  padding: 1em;
+  /* padding: 1em; */
   font-variant-caps: all-small-caps;
   font-size: 2em;
   text-align: center;
@@ -48,15 +48,15 @@ body {
 .card {
   width: 30%;
   height: 600;
-  border: 2px solid rgba(219, 10, 91);
+  /* border: 2px solid rgba(219, 10, 91); */
   border-radius: 1em;
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: #E0DCDF;
 }
 
 .banner {
-  /* background-color: rgba(255, 0, 0, .2); */
   display: flex;
   flex-direction: row;
   padding: 1em 0.5em;
@@ -79,14 +79,17 @@ h1 {
 
 h2 {
   font-size: 1.1em;
+  font-family: 'Fredericka the Great', cursive;
 }
 
 h3 {
   font-size: 0.7em;
 }
 
-h2 {
-  font-family: 'Fredericka the Great', cursive;
+h4 {
+  font-family: 'Hind Vadodara', sans-serif;
+  color: #5B5858;
+  width: 80%;
 }
 
 .newLink {
@@ -139,7 +142,7 @@ input {
 .container-show > h4 {
   font-size: 2em;
   font-family: sans-serif;
-  width: 50%;
+  width: 70%;
 }
 
 .showh1 {
@@ -151,14 +154,13 @@ input {
   width: 80%;
 }
 
-.spacer {
-
-}
 
 .tags {
   font-family: 'Fredericka the Great', cursive;
 }
 
-.description {
+.background {
   padding: 1em;
+  font-family: 'Hind Vadodara', sans-serif;
+  font-size: 0.8em;
 }
