@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <base href="/">
-    <link type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+  </head>
   <body>
     <div class="banner">
         <img class="austin-img" src="https://www.tfeconnect.com/wp-content/uploads/2016/07/texas.png" alt="Austin TX">
-          <h1 class="rainbow-text">ADVENTURE-ATX</h1>
+          <h1 class="rainbow-text">adventure.ATX</h1>
           <a class="newLink" href="/activities/new">Add New Activity</a><br>
           </div>
           <div class="container">
@@ -17,9 +18,9 @@
                   <li>
 
                     <a href="/activities/<%=activities[i].id; %>">   <img src="<%=activities[i].img; %>"/></a><br>
-                    <h2><%=activities[i].name; %> <br></h2>
+                    <h2 class="activityText"><%=activities[i].name; %> <br></h2>
                       <h3>Description: <%=activities[i].description; %><br></h3>
-                      Tags: <%=activities[i].tags; %>
+                      <h3 class="rainbow-text">Tags: <%=activities[i].tags; %></h3>
                   </li>
                   <br>
 
@@ -27,6 +28,10 @@
                   <input type="submit" value="DELETE" />
               </form> <br>
               <a href="/activities/<%=activities[i].id; %>/edit">Edit</a> <br>
+              <br>
+                </div>
+                <div class="spacer">
+
                 </div>
             <% } %>
 

@@ -3,22 +3,24 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <base href="/">
-        <link type="text/css" href="/css/main.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
     </head>
     <body>
-      <div class="container">
-        <h1>Edit Activity</h1>
+      <div class="container-new">
+        <h1 class="rainbow-text">Edit Activity</h1>
         <form action="/activities/<%=activity.id%>?_method=PUT" method="POST">
 
-              Name: <input type="text" name="name" value="<%=activity.name%>"/><br/>
-              Description: <input type="text" name="description" value="<%=activity.description%>"/><br/>
-              Image: <input type="text" name="image" value="<%=activity.img%>"/><br/>
+              Name: <input type="text" name="name" value="<%=activity.name%>"/><br/> <br>
+              Description: <input type="text" name="description" value="<%=activity.description%>"/><br/> <br>
+              Image: <input type="text" name="image" value="<%=activity.img%>"/><br/> <br>
               Tags:
               <input type="text" name="tags" value="<%=activity.tags%>"/>
-              <br/>
-              <input type="submit" value="Submit Changes"/>
+              <br/> <br>
+              <input class="new-submit" type="submit" value="Submit Changes"/>
             </form>
+            <br>
+            <a href="/activities">Back</a>
           </div>
     </body>
 </html>

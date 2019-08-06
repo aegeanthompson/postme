@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <title></title>
     <base href="/">
-    <link type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="container-show">
 
-          <h1 class="rainbow-text"><%=activity.name; %></h1>
+          <h1 class="rainbow-text showh1"><%=activity.name; %></h1>
+          <img class="showImg"src="<%=activity.img; %>"> <br>
           <h4>Description: <%=activity.description; %> <br></h4>
-          <img src="<%=activity.img; %>"> <br>
+
 
           <a href="/activities">Go Back</a>
       </div>

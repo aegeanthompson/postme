@@ -3,19 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <base href="/">
-    <link type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-    <h1>Add New Activity</h1>
+    <div class="container-new">
+    <h1 class="rainbow-text">Add New Activity</h1>
         <form action="/activities" method="POST">
-          Name: <input type="text" name="name" /> <br>
+          Name: <input type="text" name="name" /> <br> <br>
           Description: <input type="text" name="description"/>
           <br>
-          Image: <input type="text" name="img"> <br>
-          Tags: <input type="text" name="tags"> <br>
-          <input type="submit" value="Add New Activity">
+          Image: <input type="text" name="img"> <br> <br>
+          Tags: <input type="text" name="tags"> <br> <br>
+          <input class="new-submit" type="submit" value="Add New Activity">
+          <br>
+          <br>
+          <a href="/activities">Back</a>
       </div>
   </body>
 </html>
