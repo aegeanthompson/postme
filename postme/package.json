@@ -9,15 +9,12 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.6.8"
   },
-  "scripts": {
-  "build": "if [ $BUILD_ASSETS ]; then npm run build-assets; fi",
-  "build-assets": "bower install && grunt build",
-
-},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "if [ $BUILD_ASSETS ]; then npm run build-assets; fi",
+    "build-assets": "bower install && grunt build"
   },
   "repository": {
     "type": "git",
