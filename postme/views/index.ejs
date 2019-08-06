@@ -18,19 +18,22 @@
           <div class="container">
               <% for(let i = 0; i < activities.length; i++){ %>
                   <div class="card">
-                  <li>
+                    <div class="spacer">
 
-                    <a href="/activities/<%=activities[i].id; %>">   <img src="<%=activities[i].img; %>"/></a><br>
+                    </div>
+                  <li>
+                    <a href="/activities/<%=activities[i].id; %>">
+                    <img src="<%=activities[i].img; %>"/></a><br>
 
 
                     <h2 class="activityText"><%=activities[i].name; %> <br></h2>
-                      <h3 class="background"> <%=activities[i].description; %><br></h3>
+                      <h3 class="description"> <%=activities[i].description; %><br></h3>
                       <h3 class="rainbow-text tags">Tags: <%=activities[i].tags; %></h3>
                   </li>
                   <br>
 
                   <form action="/activities/<%=activities[i].id;%>?_method=DELETE" method="POST">
-                  <input type="submit" value="DELETE" />
+                  <input class="delete-input"type="submit" value="DELETE" />
               </form> <br>
               <a href="/activities/<%=activities[i].id; %>/edit">Edit</a> <br>
               <br>

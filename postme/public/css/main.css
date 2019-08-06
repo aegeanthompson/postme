@@ -10,7 +10,6 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   flex-wrap: wrap;
-  /* background-color: #E0DCDF; */
   width: 100%;
   padding: 0.5em;
 }
@@ -21,25 +20,26 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: #000a57;
 }
 
 .container-new > form  {
-  width: 400px;
-  font-family: sans-serif;
+  /* width: 400px; */
+  color: #000a57;
   font-variant-caps: all-small-caps;
-  font-size: 1em;
-  /* padding: 1em; */
+  font-size: 1.3em;
+  font-family: 'Fredericka the Great', cursive;
+  padding: 1em;
 }
 
 .container-new > form > input {
-  width: 500px;
+  /* width: 500px; */
   text-align: center;
   font-size: 1em;
 }
 
 .new-submit {
   background-color: #f51b1f;
-  /* padding: 1em; */
   font-variant-caps: all-small-caps;
   font-size: 2em;
   text-align: center;
@@ -48,8 +48,6 @@ body {
 .card {
   width: 30%;
   height: 600;
-  /* border: 2px solid rgba(219, 10, 91); */
-  border-radius: 1em;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -70,7 +68,7 @@ body {
 
 h1 {
   font-family: 'Syncopate', sans-serif;
-  font-size: 3.5em;
+  font-size: 3.7em;
   padding: 0.5em 2em;
   background-color: rgba(255, 0, 0);
   margin: 0;
@@ -102,19 +100,21 @@ h4 {
 
 .rainbow-text {
   background-image: linear-gradient(to left, blue, indigo, red, blue);
-   -webkit-background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
 }
 /* from w3bits.com */
 
 .activityText {
   color: #000a57;
+  font-size: 1em;
 }
 
 img {
   width: 100%;
   height: 300px;
-  border-radius: 0.5em;
+  /* border-radius: 0.5em; */
+  padding-bottom: 1em;
 }
 
 li {
@@ -137,12 +137,16 @@ input {
   align-items: center;
   padding: 1em;
   text-align: center;
+  /* background-color:  #E8DFE7; */
 }
 
 .container-show > h4 {
-  font-size: 2em;
+  font-size: 1.4em;
   font-family: sans-serif;
-  width: 70%;
+  width: 80%;
+  padding: 2em;
+  color: #000a57;
+  margin: 0;
 }
 
 .showh1 {
@@ -151,7 +155,7 @@ input {
 
 .showImg {
   height: 400px;
-  width: 80%;
+  width: 100%;
 }
 
 
@@ -163,4 +167,26 @@ input {
   padding: 1em;
   font-family: 'Hind Vadodara', sans-serif;
   font-size: 0.8em;
+}
+
+.description {
+  padding: 0 1em;
+  color: #403d3d;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--dusty-blue);
+}
+
+.delete-input {
+  width: 30%;
+}
+
+.spacer {
+  background-color: whitesmoke;
+  padding-bottom: 2em;
 }
