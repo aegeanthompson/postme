@@ -7,23 +7,28 @@
     <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="container">
-        <h1>Activities in ATX</h1>
-          <a class="activityLink" href="/activities/new">Add New Activity</a>
-          <div class="card">
+    <div class="banner">
+        <img class="austin-img" src="https://www.tfeconnect.com/wp-content/uploads/2016/07/texas.png" alt="Austin TX">
+          <h1 class="rainbow-text">ADVENTURE-ATX</h1>
+          <a class="newLink" href="/activities/new">Add New Activity</a><br>
+          </div>
+          <div class="container">
               <% for(let i = 0; i < activities.length; i++){ %>
+                  <div class="card">
                   <li>
-                      <%=activities[i].name; %> <br>
+
                     <a href="/activities/<%=activities[i].id; %>">   <img src="<%=activities[i].img; %>"/></a><br>
-                      Description: <%=activities[i].description; %><br>
+                    <h2><%=activities[i].name; %> <br></h2>
+                      <h3>Description: <%=activities[i].description; %><br></h3>
                       Tags: <%=activities[i].tags; %>
                   </li>
                   <br>
-                    </div>
+
                   <form action="/activities/<%=activities[i].id;%>?_method=DELETE" method="POST">
                   <input type="submit" value="DELETE" />
               </form> <br>
               <a href="/activities/<%=activities[i].id; %>/edit">Edit</a> <br>
+                </div>
             <% } %>
 
       </div>

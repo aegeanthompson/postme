@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const activitiesSchema = new mongoose.Schema(
+const favsSchema = new mongoose.Schema(
   {
     name: {type: String, required: true},
     description: {type: String, required: true},
@@ -12,6 +12,6 @@ const activitiesSchema = new mongoose.Schema(
   }
 );
 
-const Activities  = mongoose.model('Activities', activitiesSchema);
+const Favs  = mongoose.model('Favs', favsSchema);
 
-module.exports = Activities;
+module.exports = Favs;

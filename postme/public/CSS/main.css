@@ -2,32 +2,74 @@
 
 body {
   background-color: whitesmoke;
-  color: hotpink;
+  color: grey;
   text-align: center;
 }
 
 .container {
-  background-color: #ccc;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .card {
   width: 30%;
-  /* display: flex;
-  flex-direction: column; */
+  height: 600;
+  border: 2px solid rgba(219, 10, 91);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.banner {
+  /* background-color: rgba(255, 0, 0, .2); */
+  display: flex;
+  flex-direction: row;
+  padding: 1em 0.5em;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.austin-img {
+  width: 20%;
 }
 
 h1 {
   font-family: 'Staatliches', cursive;
-  font-size: 3em;
+  font-size: 6em;
+  padding: 0.5em 2em;
+  background-color: rgba(255, 0, 0);
+  margin: 0;
+  text-align: right;
 }
 
+h2 {
+  font-size: 1.1em;
+}
+
+h3 {
+  font-size: 0.7em;
+}
+
+.newLink {
+  margin: 0;
+  padding-bottom: 1em;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to left, blue, indigo, red, blue);
+   -webkit-background-clip: text;
+  color: transparent;
+}
+/* from w3bits.com */
+
 img {
-  border-radius: 2em;
+  width: 100%;
+  height: 300px;
+  border-radius: 0.5em;
 }
 
 li {
@@ -36,9 +78,22 @@ li {
 }
 
 input {
-  background-color: hotpink;
+  background-color: indigo;
   width: 10em;
   height: 3em;
   border-radius: 1em;
   color: whitesmoke;
+}
+.container-show {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.container-show > h4 {
+  font-size: 2em;
+  font-family: sans-serif;
+  width: 50%;
 }
